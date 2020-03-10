@@ -2,18 +2,9 @@ import requests
 import json
 from python_variable import devolver_variables_globales
 import numpy
-    #para saber el tipo
-    #print(type(jsontoken_descodificar_a_string))
-
-    #Hacer la llamada a la <class dict>
-    #print(jsontoken_descodificar_a_string["access_token"])
-
-#dev = devolver_variables_globales()
-#print(dev.url_vg)
-
-
-
+       
 class authenticate:
+    # a function for get access token from issabel api.
     def __callauth__(self):
         dev = devolver_variables_globales()
         self.url = dev.url_vg
@@ -32,6 +23,7 @@ class authenticate:
         else:
             print("We had a problem with connection to the Issabel PBXAPI")
 
+    # a funcion to make calls --> still working
     def __call__(self):
         try:
             dev = devolver_variables_globales()
@@ -71,18 +63,7 @@ class authenticate:
             print("Sorry, we have a connection error")
 
 
-#p1 = authenticate()
-#p1.__call__()
-#authenticate().__call__(authenticate().__callauth__())
-
 #SE SUPONE QUE ESTA FUNCION SE LLAMA LA PRIMERA
 #authenticate().__callauth__()
 
 authenticate().__call__()
-
-#class BearerAuth(requests.auth.AuthBase):
-#    def __init__(self, token):
-#        self.token = token
-#    def __call__(self, r):
-#        r.headers["authorization"] = "Bearer " + self.token
-#        return r
